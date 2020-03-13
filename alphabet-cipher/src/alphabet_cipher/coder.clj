@@ -45,8 +45,9 @@
     ))
 
 (defn minimal-repetition [str min-n]
-  (let [str-start (subs str 0 min-n)]
-    (if (is-reps str str-start)
+  (let [str-start (subs str 0 min-n)
+        str-rest (subs str min-n)]
+    (if (is-reps str-rest str-start)
       str-start
       (minimal-repetition str (inc min-n)))
     ))
